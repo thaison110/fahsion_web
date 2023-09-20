@@ -1,0 +1,172 @@
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+.wrapper {
+    z-index: 2;
+    width: 100vw;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 6px 10px 0px #e6e9fd;
+    font-size: 24px;
+    font-family: "Poppins", "Helvetica Neue";
+}
+
+.inner {
+    height: 100%;
+    width: 1140px;
+    display: flex;
+    align-items: center;
+}
+.logo {
+    height: 150px;
+    cursor: pointer;
+}
+.right-header {
+    width: 100%;
+    height: 100%;
+}
+.search-header {
+    width: 100%;
+    height: 70%;
+    display: flex;
+}
+.search {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.input-search {
+    border: 1px solid black;
+    width: 70%;
+    display: flex;
+    height: 50px;
+    border-radius: 30px;
+}
+.input {
+    font-size: 1.6rem;
+    outline: none;
+    border: transparent;
+    font-family: "Poppins", "Helvetica Neue";
+    font-weight: 500;
+    margin-left: 20px;
+    width: 100%;
+}
+.btn-input {
+    background: transparent none;
+    width: 80px;
+    .btn {
+        height: 30px;
+        color: rgb(71, 68, 68);
+        cursor: pointer;
+    }
+}
+.icon-user {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icon {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .cart {
+        color: black;
+        height: 30px;
+        cursor: pointer;
+        &:hover {
+            color: rgb(79, 79, 79);
+        }
+    }
+    .User {
+        color: black;
+        height: 30px;
+        cursor: pointer;
+        &:hover {
+            color: rgb(79, 79, 79);
+        }
+    }
+    .Phone {
+        color: black;
+        height: 30px;
+        cursor: pointer;
+        &:hover {
+            color: rgb(79, 79, 79);
+        }
+    }
+}
+.navbar {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    .navi {
+        width: 100%;
+        justify-content: space-around;
+        display: flex;
+    }
+}
+.none {
+    display: none;
+}
+.text {
+    font-size: 2rem;
+    font-family: "Poppins", "Helvetica Neue";
+    font-weight: 500;
+    color: #2d2d2d;
+    &:hover {
+        cursor: pointer;
+        color: green;
+    }
+}
+.text1 {
+    font-size: 2rem;
+    font-family: "Poppins", "Helvetica Neue";
+    font-weight: 500;
+    color: #2d2d2d;
+    &:hover {
+        cursor: pointer;
+        color: green;
+    }
+}
+.title {
+    font-size: 1rem;
+}
+.popup {
+    width: 250px !important;
+}
+@media screen and (max-width: 1140px) {
+    .search {
+        display: none;
+    }
+    .menu-header {
+        width: 50%;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+        justify-content: start;
+    }
+    .none {
+        display: flex;
+        background-color: transparent;
+        .menu-icon {
+            height: 30px;
+        }
+    }
+    .icon-user {
+        display: flex;
+        justify-content: end;
+        height: 150px;
+    }
+    .icon {
+        justify-content: end;
+        width: 100%;
+    }
+    .navbar {
+        display: none;
+    }
+}

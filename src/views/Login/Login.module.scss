@@ -1,0 +1,97 @@
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+.wrapper {
+    text-align: center;
+    height: 700px;
+    justify-content: center;
+    display: flex;
+    font-size: 18px;
+    font-family: "Poppins", "Helvetica Neue";
+}
+
+.inner {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://360.com.vn/wp-content/uploads/2022/10/back-thanh-toann-scaled.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100vw !important;
+    z-index: 1;
+}
+.form {
+    width: 1140px;
+    display: flex;
+    align-items: center;
+    text-align: start;
+}
+.login-form {
+    width: 400px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background-color: #ffffffbb;
+    height: 500px;
+}
+.title {
+    margin-left: 30px;
+    margin-bottom: 15px;
+    color: #000000;
+    font-size: 30px;
+}
+.email {
+    margin-left: 30px;
+    padding-left: 30px;
+    text-decoration: none;
+    width: 80%;
+    height: 50px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border: 1px solid rgb(151, 151, 151);
+}
+.password {
+    margin-left: 30px;
+    padding-left: 30px;
+    text-decoration: none;
+    width: 80%;
+    height: 50px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border: 1px solid rgb(151, 151, 151);
+}
+.message {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+.title-form {
+    margin-left: 40px;
+}
+.btn-login {
+    margin-left: 30px;
+    width: 100px;
+    height: 45px;
+    border-radius: 15px;
+    background-color: rgb(9, 42, 255);
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 30px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(179, 0, 255);
+    }
+}
+.btn-login-forgot {
+    margin-left: 50px;
+}
+.media-login {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    margin-right: 30px;
+}
+
+.facebook-login {
+    color: rgb(9, 42, 255);
+    width: 30px;
+    height: 30px;
+}
