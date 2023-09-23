@@ -27,6 +27,7 @@
     "react-plain-slider": "^0.0.3",
     "react-router-dom": "^6.11.1",
     "react-slideshow-image": "^4.2.1",
+    "react-table": "^7.8.0",
     "react-toastify": "^9.1.3",
     "reactjs-popup": "^2.0.5"
   },
