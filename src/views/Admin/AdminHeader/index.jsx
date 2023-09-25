@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 function AdminHeader() {
   return (
-    <div className={cx("wrapper")}>
+    <div className={cx("wrapper-admin")}>
       <div>
         <Link className={cx("logo-header")}>
           <img className={cx("logo")} src={logo} to="/admin" />

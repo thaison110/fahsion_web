@@ -22,6 +22,7 @@ import AdminDashboard from "./views/Admin/AdminDashboard/Index.Jsx";
 import AdminDefault from "./views/Admin/AdminDefault";
 import AddProduct from "./views/Admin/AddProduct";
 import OrderManager from "./views/Admin/OrderManager";
+import InformationUser from "./views/InformationUser";
 
 const router = createBrowserRouter([
   {
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/users",
-        element: <Users />,
+        element: <InformationUser />,
       },
       {
         path: "/collection",

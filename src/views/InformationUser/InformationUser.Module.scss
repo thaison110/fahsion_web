@@ -1,0 +1,50 @@
+.wrapper {
+  height: 500px;
+  width: 100vw;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+}
+.inner {
+  width: 1140px;
+}
+.tittle-infor {
+  height: 150px;
+  border-bottom: 3px solid rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .tittle {
+    font-size: 3.5rem;
+    font-weight: 600;
+  }
+}
+.container {
+  width: 1140px;
+  height: 350px;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .container-infor {
+    width: 90%;
+    height: 80%;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .title-name {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+    .title-text {
+      font-size: 2rem;
+      font-weight: 400;
+      margin-right: 20px;
+    }
+    .btn-infor {
+      font-size: 2rem;
+      text-decoration: none;
+    }
+  }
+}
