@@ -16,78 +16,110 @@ import Free from "./components/collections/Free";
 import Product from "./components/collections/Product";
 import Cart from "./components/Cart";
 import ManagerProduct from "./views/Admin/Product/Index";
+import Confirm from "./components/Confirm";
+import AddUser from "./views/Admin/AddUser";
+import AdminDashboard from "./views/Admin/AdminDashboard/Index.Jsx";
+import AdminDefault from "./views/Admin/AdminDefault";
+import AddProduct from "./views/Admin/AddProduct";
+import OrderManager from "./views/Admin/OrderManager";
 
 const router = createBrowserRouter([
-    {
+  {
+    path: "/",
+    element: <DefaultLayout />,
+    children: [
+      {
         path: "/",
-        element: <DefaultLayout />,
-        children: [
-            {
-                path: "/",
-                element: <Home />,
-            },
-            {
-                path: "/admin/product",
-                element: <ManagerProduct />,
-            },
-            {
-                path: "/login",
-                element: <Login />,
-            },
-            {
-                path: "/Cart",
-                element: <Cart />,
-            },
-            {
-                path: "/signUp",
-                element: <SignUp />,
-            },
-            {
-                path: "/users",
-                element: <Users />,
-            },
-            {
-                path: "/collection",
-                element: <Home />,
-            },
-            {
-                path: "/collection/shirt",
-                element: <Shirt />,
-            },
-            {
-                path: "/collection/trousers",
-                element: <Trousers />,
-            },
-            {
-                path: "/collection/set",
-                element: <Set />,
-            },
-            {
-                path: "/collection/bag",
-                element: <Bag />,
-            },
-            {
-                path: "/collection/shoes",
-                element: <Shoes />,
-            },
-            {
-                path: "/collection/orthers",
-                element: <Orthers />,
-            },
-            {
-                path: "/collection/free",
-                element: <Free />,
-            },
-            {
-                path: "/collection/product",
-                element: <Product />,
-            },
-            {
-                path: "*",
-                element: <NotFound />,
-            },
-        ],
-    },
+        element: <Home />,
+      },
+      {
+        path: "/admin/product",
+        element: <ManagerProduct />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/Cart",
+        element: <Cart />,
+      },
+      {
+        path: "/signUp",
+        element: <SignUp />,
+      },
+      {
+        path: "/users",
+        element: <Users />,
+      },
+      {
+        path: "/collection",
+        element: <Home />,
+      },
+      {
+        path: "/collection/shirt",
+        element: <Shirt />,
+      },
+      {
+        path: "/collection/trousers",
+        element: <Trousers />,
+      },
+      {
+        path: "/collection/set",
+        element: <Set />,
+      },
+      {
+        path: "/collection/bag",
+        element: <Bag />,
+      },
+      {
+        path: "/collection/shoes",
+        element: <Shoes />,
+      },
+      {
+        path: "/collection/orthers",
+        element: <Orthers />,
+      },
+      {
+        path: "/collection/free",
+        element: <Free />,
+      },
+      {
+        path: "/collection/product",
+        element: <Product />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
+      },
+      {
+        path: "/confirm",
+        element: <Confirm />,
+      },
+    ],
+  },
+  {
+    path: "/admin",
+    element: <AdminDefault />,
+    children: [
+      {
+        path: "/admin",
+        element: <AdminDashboard />,
+      },
+      {
+        path: "/admin/usermanger",
+        element: <AddUser />,
+      },
+      {
+        path: "/admin/productmanager",
+        element: <AddProduct />,
+      },
+      {
+        path: "/admin/odermanager",
+        element: <OrderManager />,
+      },
+    ],
+  },
 ]);
 
 export default router;
