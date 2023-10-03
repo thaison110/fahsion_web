@@ -1,7 +1,7 @@
 .wrapper {
   height: 500px;
-  width: 100vw;
-  border: 1px solid red;
+  width: 100%;
+  // border: 1px solid red;
   display: flex;
   justify-content: center;
 }
@@ -22,14 +22,14 @@
 .container {
   width: 1140px;
   height: 350px;
-  border: 1px solid red;
+  // border: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: center;
   .container-infor {
     width: 90%;
     height: 80%;
-    border: 1px solid red;
+    // border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;

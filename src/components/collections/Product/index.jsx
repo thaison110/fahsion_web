@@ -208,6 +208,60 @@ function Product() {
           </div>
         </div>
       </div>
+      <div className={cx("user-review")}>
+        <div className={cx("img-user")}>
+          <div>
+            <img
+              className={cx("img-user-review")}
+              src="https://upload.wikimedia.org/wikipedia/commons/5/50/User_icon-cp.svg"
+              alt=""
+            />
+          </div>
+          <div className={cx("name-user-review")}>
+            <h1>Thái Sơn</h1>
+          </div>
+        </div>
+        <div className={cx("cmt-review")}>
+          <div className={cx("cmt-text")}>
+            <div className={cx("right01")}>
+              <FontAwesomeIcon className={cx("start")} icon={faStar} />
+              <FontAwesomeIcon className={cx("start")} icon={faStar} />
+              <FontAwesomeIcon className={cx("start")} icon={faStar} />
+              <FontAwesomeIcon className={cx("start")} icon={faStar} />
+              <FontAwesomeIcon className={cx("start")} icon={faStar} />
+              <p className={cx("comment")}>
+                Shop giao hàng nhanh, sản phẩm mặc lên form đẹp cực
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className={cx("img-user")}>
+          <div>
+            <img
+              className={cx("img-user-review")}
+              src="https://upload.wikimedia.org/wikipedia/commons/5/50/User_icon-cp.svg"
+              alt=""
+            />
+          </div>
+          <div className={cx("name-user-review")}>
+            <h1>Thái Sơn</h1>
+          </div>
+        </div>
+        <div className={cx("cmt-review")}>
+          <div className={cx("cmt-text")}>
+            <div className={cx("right01")}>
+              <FontAwesomeIcon className={cx("start")} icon={faStar} />
+              <FontAwesomeIcon className={cx("start")} icon={faStar} />
+              <FontAwesomeIcon className={cx("start")} icon={faStar} />
+              <FontAwesomeIcon className={cx("start")} icon={faStar} />
+              <FontAwesomeIcon className={cx("start")} icon={faStar} />
+              <p className={cx("comment")}>
+                Shop giao hàng nhanh, sản phẩm mặc lên form đẹp cực
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

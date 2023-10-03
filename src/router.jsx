@@ -23,6 +23,7 @@ import AdminDefault from "./views/Admin/AdminDefault";
 import AddProduct from "./views/Admin/AddProduct";
 import OrderManager from "./views/Admin/OrderManager";
 import InformationUser from "./views/InformationUser";
+import Completed_Order from "./components/collections/Completed_Order";
 
 const router = createBrowserRouter([
   {
@@ -96,6 +97,10 @@ const router = createBrowserRouter([
       {
         path: "/confirm",
         element: <Confirm />,
+      },
+      {
+        path: "/confirm/completed",
+        element: <Completed_Order />,
       },
     ],
   },

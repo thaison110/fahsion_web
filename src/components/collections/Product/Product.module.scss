@@ -3,19 +3,22 @@
 .wrapper {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .inner {
   display: flex;
   width: 1440px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1),
+    0 2px 6px 2px rgba(60, 64, 67, 0.15);
+  border-radius: 10px;
 }
 .left {
   width: 50%;
-  border: 1px solid #000;
 }
 .right {
   width: 50%;
-  border: 1px solid #000;
   display: flex;
   justify-content: center;
   .right-text {
@@ -145,11 +148,14 @@
     margin-top: 40px;
     width: 452px;
     height: 170px;
-    border: 1px solid black;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1),
+      0 2px 6px 2px rgba(60, 64, 67, 0.15);
+    border-radius: 10px;
     background-color: #f7f8fa;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
     .content {
       .line-content {
         display: flex;
@@ -165,6 +171,51 @@
         width: 30px;
         height: 25px;
       }
+    }
+  }
+}
+.user-review {
+  width: 1440px;
+  height: 300px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1),
+    0 2px 6px 2px rgba(60, 64, 67, 0.15);
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  .img-user {
+    margin-top: 10px;
+    display: flex;
+    margin-left: 20px;
+  }
+  .img-user-review {
+    width: 50px;
+    height: 50px;
+    // border: 1px solid rgb(0, 0, 0);
+    border-radius: 40px;
+  }
+  .name-user-review {
+    margin-left: 20px;
+    align-items: center;
+    display: flex;
+  }
+  .cmt-review {
+    display: flex;
+    margin-left: 20px;
+    height: 60px;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .cmt-text {
+    height: 60px;
+    width: 90%;
+    display: flex;
+    .comment {
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+    .start {
+      color: #ffc800;
     }
   }
 }

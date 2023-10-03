@@ -67,125 +67,17 @@ function Cart() {
                           <a href="">
                             <img
                               className={cx("img-product")}
-                              src="https://360.com.vn/wp-content/uploads/2023/04/Tach-nen-APHTK422-Copy-1.png"
+                              src="https://360.com.vn/wp-content/uploads/2023/04/QGKTK401-7-Copy.jpg"
                             />
                           </a>
                         </div>
                       </td>
                       <td className={cx("item")}>
-                        <h3 className={cx("text")}>Thắt Lưng</h3>
+                        <h3 className={cx("text")}>Quần bò</h3>
                         <p className={cx("text")}>
                           <span>S / Xanh</span>
                         </p>
-                        <p className={cx("price")}>600.000đ</p>
-                      </td>
-                      <td className={cx("remove")}></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div className={cx("product")}>
-              <div className={cx("")}>
-                <table>
-                  <thead>
-                    <tr>
-                      <th className={cx("img")}></th>
-                      <th className={cx("item")}></th>
-                      <th className={cx("remove")}></th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className={cx("img")}>
-                        <div className={cx("img-product")}>
-                          <a href="">
-                            <img
-                              className={cx("img-product")}
-                              src="https://360.com.vn/wp-content/uploads/2023/04/Tach-nen-APHTK422-Copy-1.png"
-                            />
-                          </a>
-                        </div>
-                      </td>
-                      <td className={cx("item")}>
-                        <h3 className={cx("text")}>Thắt Lưng</h3>
-                        <p className={cx("text")}>
-                          <span>S / Xanh</span>
-                        </p>
-                        <p className={cx("price")}>600.000đ</p>
-                      </td>
-                      <td className={cx("remove")}></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div className={cx("product")}>
-              <div className={cx("")}>
-                <table>
-                  <thead>
-                    <tr>
-                      <th className={cx("img")}></th>
-                      <th className={cx("item")}></th>
-                      <th className={cx("remove")}></th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className={cx("img")}>
-                        <div className={cx("img-product")}>
-                          <a href="">
-                            <img
-                              className={cx("img-product")}
-                              src="https://360.com.vn/wp-content/uploads/2023/04/Tach-nen-APHTK422-Copy-1.png"
-                            />
-                          </a>
-                        </div>
-                      </td>
-                      <td className={cx("item")}>
-                        <h3 className={cx("text")}>Thắt Lưng</h3>
-                        <p className={cx("text")}>
-                          <span>S / Xanh</span>
-                        </p>
-                        <p className={cx("price")}>600.000đ</p>
-                      </td>
-                      <td className={cx("remove")}></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div className={cx("product")}>
-              <div className={cx("")}>
-                <table>
-                  <thead>
-                    <tr>
-                      <th className={cx("img")}></th>
-                      <th className={cx("item")}></th>
-                      <th className={cx("remove")}></th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className={cx("img")}>
-                        <div className={cx("img-product")}>
-                          <a href="">
-                            <img
-                              className={cx("img-product")}
-                              src="https://360.com.vn/wp-content/uploads/2023/04/Tach-nen-APHTK422-Copy-1.png"
-                            />
-                          </a>
-                        </div>
-                      </td>
-                      <td className={cx("item")}>
-                        <h3 className={cx("text")}>Thắt Lưng</h3>
-                        <p className={cx("text")}>
-                          <span>S / Xanh</span>
-                        </p>
-                        <p className={cx("price")}>600.000đ</p>
+                        <p className={cx("price")}>680.000đ</p>
                       </td>
                       <td className={cx("remove")}></td>
                     </tr>
@@ -201,10 +93,26 @@ function Cart() {
               </div>
               <div className={cx("total")}>
                 <div className={cx("total-text")}>
-                  <h3>Tổng Tiền</h3>
+                  <h3>Thắt lưng:</h3>
                 </div>
                 <div className={cx("total-price")}>
                   <h3>600.000đ</h3>
+                </div>
+              </div>
+              <div className={cx("total")}>
+                <div className={cx("total-text")}>
+                  <h3>Quần bò:</h3>
+                </div>
+                <div className={cx("total-price")}>
+                  <h3>600.000đ</h3>
+                </div>
+              </div>
+              <div className={cx("total")}>
+                <div className={cx("total-text")}>
+                  <h3>Tổng Tiền:</h3>
+                </div>
+                <div className={cx("total-price")}>
+                  <h3>1.280.000đ</h3>
                 </div>
               </div>
               <div className={cx("total-button")}>
@@ -216,21 +124,8 @@ function Cart() {
           </div>
         </div>
         <div className={cx("section3")}>
-          <div className={cx("section3-form")}>
-            <form>
-              <label>
-                <h3>Ghi Chú Của Bạn</h3>
-                <input
-                  className={cx("form")}
-                  type="text"
-                  name="name"
-                  placeholder="Ghi Chú Của Bạn"
-                />
-              </label>
-            </form>
-          </div>
           <div className={cx("section3-policy")}>
-            <h3>Chính sách mua hàng</h3>
+            <h3 className={cx("text-t")}>Chính sách mua hàng</h3>
             <p className={cx("text-p")}>
               Sản phẩm được đổi 1 lần duy nhất, không hỗ trợ trả.
             </p>

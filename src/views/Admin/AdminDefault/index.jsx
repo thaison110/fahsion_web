@@ -4,6 +4,7 @@ import AdminHeader from "../AdminHeader";
 import NaviAdmin from "../NaviAdmin";
 import classNames from "classNames/bind";
 import styles from "./AdminDefault.module.scss";
+import Footer from "../../../components/Footer";
 
 const cx = classNames.bind(styles);
 
@@ -15,10 +16,11 @@ function AdminDefault() {
         <div>
           <NaviAdmin />
         </div>
-        <div>
+        <div className={cx("wrapper-")}>
           <Outlet />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

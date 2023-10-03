@@ -11,10 +11,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <GlobalStyles>
-      {/* <ContextProvider> */}
-      <RouterProvider router={router} />
-      <ToastContainer />
-      {/* </ContextProvider> */}
+      <ContextProvider>
+        <RouterProvider router={router} />
+        <ToastContainer />
+      </ContextProvider>
     </GlobalStyles>
   </React.StrictMode>
 );
