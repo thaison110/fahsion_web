@@ -69,6 +69,7 @@ app.post("/api/register", async (req, res) => {
             password: hashedPassword,
             userName,
             phone,
+            role: 0,
         });
         await user.save();
         res.status(201).json({ message: "Registration successful" });
@@ -92,10 +93,29 @@ app.post("/api/login", async (req, res) => {
             res.status(401).json({ error: "Invalid credentials" });
             return;
         }
-        const message = { userId: user._id };
+        const message = { id: user._id, name: user.userName, role: user.role };
         res.json({ user: message });
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: "Server error" });
+    }
+});
+app.get("/api/users", async (req, res) => {
+    try {
+        const users = await User.find().sort({ role: -1 });
+        res.json(users);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+});
+// In your Node.js server
+app.delete("/api/users/:id", async (req, res) => {
+    try {
+        await User.findByIdAndRemove(req.params.id);
+        res.json({ message: "User deleted" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
     }
 });

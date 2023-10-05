@@ -23,10 +23,13 @@ const cx = classNames.bind(styles);
 function Header() {
     // Function to handle successful logout
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [userName, setUserName] = useState("");
     useEffect(() => {
         const cookieValue = Cookies.get("isLoggedIn");
         if (cookieValue === "true") {
+            const name = Cookies.get("userName");
             setIsLoggedIn(true);
+            setUserName(name);
         }
     }, []);
     const handleLogout = () => {
@@ -118,11 +121,15 @@ function Header() {
                                         />
                                     </Link>
                                 ) : (
-                                    <Link onClick={handleLogout}>
-                                        <FontAwesomeIcon
+                                    <Link
+                                        onClick={handleLogout}
+                                        to="userSetting"
+                                    >
+                                        {userName}
+                                        {/* <FontAwesomeIcon
                                             icon={faSignOutAlt}
                                             className={cx("User")}
-                                        />
+                                        /> */}
                                     </Link>
                                 )}
                                 {/* <Popup

@@ -32,12 +32,14 @@ function Login() {
                 .then((response) => {
                     const user = response.data.user;
                     // The response from the server will be available here
-                    // console.log(user.userId); // This may contain information like user details or authentication status
-                    const userId = user.userId;
+                    console.log(user); // This may contain information like user details or authentication status
+                    const userId = user.id;
                     localStorage.setItem("userId", userId);
                     Cookies.set("isLoggedIn", "true");
+                    Cookies.set("userName", user.name);
 
-                    window.location.href = "/";
+                    if (user.role === 1) window.location.href = "/admin";
+                    else window.location.href = "/";
                     toast.success("Login successfully");
                 })
                 .catch((error) => {
@@ -112,7 +114,7 @@ function Login() {
                             </Link>
                         </div>
 
-                        <Link>
+                        <div>
                             <Link className={cx("media-login")}>
                                 {" "}
                                 Đăng nhập bằng Facebook
@@ -121,7 +123,7 @@ function Login() {
                                 className={cx("facebook-login")}
                                 icon={faFacebook}
                             />
-                        </Link>
+                        </div>
                     </div>
                 </div>
             </div>

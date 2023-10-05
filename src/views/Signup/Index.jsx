@@ -57,6 +57,7 @@ function Signup() {
                                 placeholder="Họ và Tên"
                                 required
                                 name="userName"
+                                value={data.userName}
                                 onChange={(event) => handleInputs(event)}
                             />
                         </div>
@@ -66,6 +67,7 @@ function Signup() {
                                 type="phone"
                                 name="phone"
                                 required
+                                value={data.phone}
                                 placeholder="Số Điện Thoại"
                                 onChange={(event) => handleInputs(event)}
                             />
@@ -77,6 +79,7 @@ function Signup() {
                                 type="email"
                                 name="email"
                                 required
+                                value={data.email}
                                 placeholder="Email"
                                 onChange={(event) => handleInputs(event)}
                             />
@@ -84,9 +87,10 @@ function Signup() {
                         <div>
                             <input
                                 className={cx("password")}
-                                type="text"
+                                type="password"
                                 placeholder="Mật Khẩu"
                                 name="password"
+                                value={data.password}
                                 required
                                 onChange={(event) => handleInputs(event)}
                             />

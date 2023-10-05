@@ -1,4 +1,5 @@
 // models/User.js
+const { Int32 } = require("mongodb");
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
@@ -19,6 +20,10 @@ const userSchema = new mongoose.Schema({
     phone: {
         type: String,
         required: true,
+    },
+    role: {
+        type: Number,
+        require: true,
     },
 });
 const User = mongoose.model("User", userSchema);
