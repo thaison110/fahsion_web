@@ -6,7 +6,6 @@
   justify-content: center;
   display: flex;
   font-size: 18px;
-  font-family: "Poppins", "Helvetica Neue";
 }
 
 .inner {
@@ -32,6 +31,7 @@
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   background-color: #ffffffbb;
   height: 500px;
+  border-radius: 10px;
 }
 .title {
   margin-left: 30px;
