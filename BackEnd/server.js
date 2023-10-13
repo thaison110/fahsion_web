@@ -16,6 +16,7 @@ const app = express();
 const PORT = process.env.PORT || 9999; // Choose any port number you prefer
 const bcrypt = require("bcrypt");
 const User = require("./models/User");
+const Product = require("./models/Product");
 
 app.use(express.json());
 // // Middleware để cấu hình CORS
@@ -109,7 +110,7 @@ app.get("/api/users", async (req, res) => {
         res.status(500).json({ message: "Server error" });
     }
 });
-// In your Node.js server
+
 app.delete("/api/users/:id", async (req, res) => {
     try {
         await User.findByIdAndRemove(req.params.id);
@@ -119,3 +120,23 @@ app.delete("/api/users/:id", async (req, res) => {
         res.status(500).json({ message: "Server error" });
     }
 });
+// Cập nhật thông tin người dùng
+app.put("/api/users/:id", async (req, res) => {
+    try {
+        const updatedUser = await User.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true }
+        );
+        res.json(updatedUser);
+    } catch (error) {
+        res.status(500).json({
+            error: "Không thể cập nhật thông tin người dùng.",
+        });
+    }
+});
+const orderRouter = require("./routes/orders");
+app.use("/api/orders", orderRouter); // Sử dụng router API cho đơn hàng
+
+const paymentRouter = require("./routes/payments");
+app.use("/api/payments", paymentRouter); // Sử dụng router API cho payment

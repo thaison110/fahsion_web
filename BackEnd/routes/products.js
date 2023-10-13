@@ -11,7 +11,12 @@ const router = express.Router();
 router.get("/api/product", async (req, res) => {
     try {
         const userId = req.query.userId;
-        const products = await Product.find({ userId: userId });
+        var products;
+        if (userId) {
+            products = await Product.find({ userId: userId });
+        } else {
+            products = await Product.find();
+        }
 
         res.status(200).json([...products]);
     } catch (error) {
@@ -25,32 +30,23 @@ router.get("/api/product", async (req, res) => {
 // Add new product
 router.post("/api/product", async (req, res) => {
     try {
-        const {
-            name,
-            userId,
-            description,
-            urlImage,
-            caption,
-            dateCreate,
-            dateUpdate,
-            isPublic,
-            shareCode,
-        } = req.body;
+        const { name, userId, url, size, price, discount, type } = req.body;
 
         // Create a new product
         const newDataset = new Product({
             name,
             userId,
-            description,
-            urlImage,
-            caption,
-            dateCreate,
-            dateUpdate,
-            isPublic,
-            shareCode,
+            url,
+            size,
+            price,
+            discount,
+            type,
+            dateCreate: Date.now(),
+            dateUpdate: Date.now(),
         });
         await newDataset.save();
         const productId = newDataset._id;
+        console.log(productId);
 
         res.status(201).json({
             message: "Product created successfully",
@@ -66,7 +62,6 @@ router.post("/api/product", async (req, res) => {
 // get product id
 router.get("/api/product:id", async (req, res) => {
     try {
-        const userId = req.query.userId;
         const productId = req.params.id;
         // // Find the product by ID and check if the owner is the logged-in user
         const product = await Product.findOne({
@@ -75,13 +70,8 @@ router.get("/api/product:id", async (req, res) => {
         if (!product) {
             return res.status(404).json({ message: "Product not found" });
         }
-        if (product.userId === userId || product.isPublic)
-            console.log("Được phép truy cập");
 
-        res.status(200).json({
-            message: "Truy cập product " + productId + " thành công",
-            // product,
-        });
+        res.json(product);
     } catch (error) {
         res.status(500).json({
             message: "Error get product",
@@ -126,29 +116,30 @@ router.put("/api/product:id", async (req, res) => {
 });
 
 // Delete product
-router.delete("/api/product:id", async (req, res) => {
+router.delete("/api/products/:id/:idUser", async (req, res) => {
     try {
         const productId = req.params.id;
+        const userId = req.params.idUser;
 
-        // Find the product by ID and check if the owner is the logged-in user
+        // Kiểm tra xem sản phẩm tồn tại và thuộc về người dùng có idUser hay không
         const product = await Product.findOne({
             _id: productId,
-            owner: req.user.userId,
+            userId: userId,
         });
+        console.log(product);
+
         if (!product) {
-            return res.status(404).json({ message: "Product not found" });
+            return res.status(404).json({
+                error: "Sản phẩm không tồn tại hoặc không thuộc về người dùng.",
+            });
         }
 
-        // Delete the product
-        await product.remove();
+        // Xóa sản phẩm
+        await Product.findByIdAndRemove(productId);
 
-        res.status(200).json({ message: "Product deleted successfully" });
+        res.json({ message: "Sản phẩm đã được xóa thành công." });
     } catch (error) {
-        res.status(500).json({
-            message: "Error deleting product",
-            error: error.message,
-        });
+        res.status(500).json({ error: "Không thể xóa sản phẩm." });
     }
 });
-
 module.exports = router;

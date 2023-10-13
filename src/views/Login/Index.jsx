@@ -38,7 +38,8 @@ function Login() {
                     Cookies.set("isLoggedIn", "true");
                     Cookies.set("userName", user.name);
 
-                    if (user.role === 1) window.location.href = "/admin";
+                    localStorage.setItem("userRole", user.role);
+                    if (user.role >= 1) window.location.href = "/admin";
                     else window.location.href = "/";
                     toast.success("Login successfully");
                 })

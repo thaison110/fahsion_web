@@ -3,19 +3,21 @@
 const mongoose = require("mongoose");
 
 const datasetSchema = new mongoose.Schema({
-    name: { type: String, required: true },
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
         required: true,
     },
-    caption: { type: String, default: "" },
-    urlImage: { type: String, default: "" },
-    description: { type: String, default: "" },
-    dateCreate: { type: String, default: "" },
-    dateUpdate: { type: String, default: "" },
-    isPublic: { type: Boolean, default: false },
-    shareCode: { type: String, default: null }, // Add the shareCode attribute
+    name: { type: String, required: true },
+    url: { type: String, default: "" },
+    size: { type: String, default: "" },
+    price: { type: Number, default: 0 },
+    discount: { type: Number, default: 0 },
+    type: { type: String, default: "" },
+    dateCreate: { type: Date, default: Date.now },
+    dateUpdate: { type: Date, default: Date.now },
+    // isPublic: { type: Boolean, default: false },
+    // shareCode: { type: String, default: null }, // Add the shareCode attribute
     // Other dataset attributes (if any)
 });
 

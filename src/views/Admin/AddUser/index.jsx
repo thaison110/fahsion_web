@@ -3,6 +3,7 @@ import styles from "./AddUser.module.scss";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import UserModal from "./inforUser";
 
 const cx = classNames.bind(styles);
 function DeleteUser({ user }) {
@@ -27,8 +28,31 @@ function DeleteUser({ user }) {
     );
 }
 
+function EditUser({ user }) {
+    const [showModal, setShowModal] = useState(false);
+    const handleEdit = () => {
+        setShowModal(true);
+    };
+
+    return (
+        <>
+            <button className={cx("btn-edit")} onClick={handleEdit}>
+                Edit
+            </button>
+            {showModal && (
+                <UserModal
+                    user={user}
+                    show={showModal}
+                    handleClose={() => setShowModal(false)}
+                />
+            )}
+        </>
+    );
+}
+
 function AddUser() {
     const [users, setUsers] = useState([]);
+
     useEffect(() => {
         const fetchUsers = () => {
             fetch("http://localhost:1099/api/users") // Replace with your actual API endpoint
@@ -49,7 +73,7 @@ function AddUser() {
         <div className={cx("wrapper-user")}>
             <div className={cx("wrapper-title-user")}>
                 <h1 className={cx("title-user")}>User Management</h1>
-                <div className={cx("wrapper-bth-user")}>
+                {/* <div className={cx("wrapper-bth-user")}>
                     <Link className={cx("wrapper-bth-user")}>
                         <button
                             className={cx("btn-add")}
@@ -58,7 +82,7 @@ function AddUser() {
                             Add User
                         </button>
                     </Link>
-                </div>
+                </div> */}
             </div>
             <div>
                 <table className={cx("table-user")}>
@@ -80,59 +104,21 @@ function AddUser() {
                                     {user.email}
                                 </td>
                                 <td className={cx("body-text-role")}>
-                                    {user.role === 0 ? "user" : "admin"}
+                                    {user.role === 0
+                                        ? "Người dùng"
+                                        : user.role === 1
+                                        ? "Quản trị viên"
+                                        : "Quản lý"}
                                 </td>
-                                <td>
-                                    <button
-                                        className={cx("btn-edit")}
-                                        onClick={() => handleEditClick(item)}
-                                    >
-                                        Sửa
-                                    </button>
-                                    <DeleteUser user={user} />
-                                </td>
+                                {user.role <
+                                    localStorage.getItem("userRole") && (
+                                    <td>
+                                        <EditUser user={user} />
+                                        <DeleteUser user={user} />
+                                    </td>
+                                )}
                             </tr>
                         ))}
-                        {/* <tr className={cx("body")}>
-                            <td className={cx("body-text-email")}>
-                                nguyenthaison8x912@gmail.com
-                            </td>
-                            <td className={cx("body-text-role")}>Admin</td>
-                            <td>
-                                <button
-                                    className={cx("btn-edit")}
-                                    onClick={() => handleEditClick(item)}
-                                >
-                                    Sửa
-                                </button>
-                                <button
-                                    className={cx("btn-remove")}
-                                    onClick={() => handleDeleteClick(item.id)}
-                                >
-                                    Xóa
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className={cx("body-text-email")}>
-                                nguyenthaison8x912@gmail.com
-                            </td>
-                            <td className={cx("body-text-role")}>Admin</td>
-                            <td>
-                                <button
-                                    className={cx("btn-edit")}
-                                    onClick={() => handleEditClick(item)}
-                                >
-                                    Sửa
-                                </button>
-                                <button
-                                    className={cx("btn-remove")}
-                                    onClick={() => handleDeleteClick(item.id)}
-                                >
-                                    Xóa
-                                </button>
-                            </td>
-                        </tr> */}
                     </tbody>
                 </table>
             </div>
